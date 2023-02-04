@@ -1,14 +1,22 @@
+@import "btnConfig";
+@import "utilities";
+@import "config";
+
+// above '@import' imports values/settings from the '_filename.scss' files that are
+// in the main 'scss' folder
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
 }
 
 body {
-  background-color: $light-color;
+  background-color: $primary-color;
   font-family: $font-stack;
   line-height: 1;
+  color: $light-color;
 }
 
 img {
@@ -19,16 +27,16 @@ a {
   text-decoration: none;
 }
 
-.hero {
-  // This is where the bulk of the SCSS styling needs to be done
+// .hero {
+//   // This is where the bulk of the SCSS styling needs to be done
 
-  // Take a look at the other files we've built already. How can they be useful here?
+//   // Take a look at the other files we've built already. How can they be useful here?
 
-  // Also, take time to review the features of SCSS we've already covered:
-  // 1. $variables
-  // 2. nesting (dont forget about the ampersand (&) parent selector!)
-  // 3. At-Rules
-}
+//   // Also, take time to review the features of SCSS we've already covered:
+//   // 1. $variables
+//   // 2. nesting (dont forget about the ampersand (&) parent selector!)
+//   // 3. At-Rules
+// }
 
 // This code is related to some of the aspects of SCSS we have yet to cover.
 // While you don't have to mess with it, it would be advisable to attempt to understand its functionality.
