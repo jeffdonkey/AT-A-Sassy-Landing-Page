@@ -2,22 +2,24 @@
 @import "utilities";
 @import "config";
 
-// above '@import' imports values/settings from the '_filename.scss' files that are
-// in the main 'scss' folder
+// lines 1-4 imports settings/values from the files listed in the command
+// lines 1-4 are "At-Rules".  Most "At-Rules" perform like JavaScript/Python commands
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
 
 body {
-  background-color: $primary-color;
+  background-color: $light-color;
   font-family: $font-stack;
   line-height: 1;
-  color: $light-color;
 }
+
+// on lines 15-16 we see values that start with "$".  In this case,
+  // the "$" values are like JavaScript variables.  The ones above
+  // are defined in the file "_config.scss"
 
 img {
   border-radius: 50%;
@@ -27,19 +29,55 @@ a {
   text-decoration: none;
 }
 
-// .hero {
-//   // This is where the bulk of the SCSS styling needs to be done
+.hero {
+  @include set-bg($primary-color);
+  height: 600px;
 
-//   // Take a look at the other files we've built already. How can they be useful here?
+  // line 33 "@include" is access values from a "@mixin"
+  // found in file "_utilities.scss"
 
-//   // Also, take time to review the features of SCSS we've already covered:
-//   // 1. $variables
-//   // 2. nesting (dont forget about the ampersand (&) parent selector!)
-//   // 3. At-Rules
-// }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-// This code is related to some of the aspects of SCSS we have yet to cover.
-// While you don't have to mess with it, it would be advisable to attempt to understand its functionality.
+    ul {
+      display: flex;
+      list-style-type: none;
+    }
+
+    li {
+      padding: 15px;
+    }
+
+    a {
+      color: text-color-picker($primary-color);
+    }
+
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+
+    img {
+      width: 50%;
+    }
+
+    h1 {
+      font-size: 50px;
+      line-height: 1.2;
+    }
+  }
+}
+
+// Margin & padding classes
 $spaceamounts: (1,2,3,4,5);
 
 @each $space in $spaceamounts {
